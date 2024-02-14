@@ -5,6 +5,9 @@ en publicaciones. Utilizando Retrofit para interactuar con una API web que gesti
 Se ha utilizado una API propia que además es otro proyecto de la asignatura de Acceso, tambien se utiliza varios
 elementos que además eran requisitos mínimos para la nota, como listas, botones, activities, fragments y toasts.
 
+Además para el diseño de la interfaz se ha utilizado una página web de generador de paleta de colores:
+https://paletadecolores.com.mx/paleta/d1dc5a/e0f7e0/77f2de/6ac5cb/45444e/
+
 Estructura del Proyecto:
 
     API:
