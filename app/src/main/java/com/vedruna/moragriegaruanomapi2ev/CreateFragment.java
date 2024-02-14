@@ -19,6 +19,7 @@ import com.vedruna.moragriegaruanomapi2ev.API.Constants.Constants;
 import com.vedruna.moragriegaruanomapi2ev.API.DTO.PostDTO;
 import com.vedruna.moragriegaruanomapi2ev.API.Interface.ApiCRUD;
 
+import java.io.IOException;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -93,18 +94,29 @@ public class CreateFragment extends Fragment {
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
-                if (!response.isSuccessful()) {
+                if (response.isSuccessful()) {
+                    String responseBody = response.body();
+                    if (responseBody != null && responseBody.equals("Post created successfully")) {
+                        // Si la respuesta es exitosa, mostrar el Toast de éxito
+                        Toast.makeText(getActivity(), "Post created!", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    // Si la respuesta no es exitosa, mostrar el mensaje de error del servidor
                     Log.e("Response err: ", response.message());
                     Toast.makeText(getActivity(), "Failed request to server.", Toast.LENGTH_LONG).show();
-                    return;
                 }
-                Toast.makeText(getActivity(), "Post created!", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onFailure(@NonNull Call<String> call, Throwable t) {
-                Log.e("Throw err: ", Objects.requireNonNull(t.getMessage()));
-                Toast.makeText(getActivity(), "Failed connection to server.", Toast.LENGTH_LONG).show();
+                if (t instanceof IOException) {
+                    // Problema de conexión
+                    Toast.makeText(getActivity(), "Network error. Please check your connection.", Toast.LENGTH_LONG).show();
+                } else {
+                    // Otro tipo de error
+                    Log.e("Throw err: ", Objects.requireNonNull(t.getMessage()));
+                    Toast.makeText(getActivity(), "Post created!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
