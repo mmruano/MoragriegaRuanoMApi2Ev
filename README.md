@@ -8,7 +8,7 @@ elementos que además eran requisitos mínimos para la nota, como listas, botone
 Además para el diseño de la interfaz se ha utilizado una página web de generador de paleta de colores:
 https://paletadecolores.com.mx/paleta/d1dc5a/e0f7e0/77f2de/6ac5cb/45444e/
 
-Se utilizará la siguiente configuración para el proyecto.
+Se utilizará la siguiente configuración para el proyecto ademas de la API 22 al tener más versiones de compatibilidad.
 
 ![image](https://github.com/mmruano/MoragriegaRuanoMApi2Ev/assets/146729468/8de08955-50c0-46fd-93f5-06562947f4e7)
 
