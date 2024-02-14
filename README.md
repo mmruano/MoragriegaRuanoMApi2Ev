@@ -8,6 +8,10 @@ elementos que además eran requisitos mínimos para la nota, como listas, botone
 Además para el diseño de la interfaz se ha utilizado una página web de generador de paleta de colores:
 https://paletadecolores.com.mx/paleta/d1dc5a/e0f7e0/77f2de/6ac5cb/45444e/
 
+Se utilizará la siguiente configuración para el proyecto.
+
+![image](https://github.com/mmruano/MoragriegaRuanoMApi2Ev/assets/146729468/8de08955-50c0-46fd-93f5-06562947f4e7)
+
 Estructura del Proyecto:
 
     API:
@@ -34,6 +38,18 @@ Estructura del Proyecto:
         DeleteFragment: Permite a los usuarios eliminar publicaciones.
         ExitFragment: No se proporcionó información detallada sobre su funcionalidad.
 
+--------------------------------------------------
+
+Para poder a empezar a trabajar en este proyecto se necesita añadir algunas librerias y depencdencias para que funcione.
+Editamos el archivo de Gradle Scripts, Module App.
+
+![image](https://github.com/mmruano/MoragriegaRuanoMApi2Ev/assets/146729468/691cd923-8a50-49fd-8fba-48ba07832cfd)
+
+Utilizaremos la librería de Retrofit, un cliente de servidores REST para Android y Java. Permite hacer peticiones
+al servidor tipo: GET, POST, PUT, PATCH, DELETE y HEAD, y gestionar diferentes tipos de parámetros, pasando
+automáticamente la respuesta a un tipo de datos. La versión más actualizada es la 2.9.0.
+
+![image](https://github.com/mmruano/MoragriegaRuanoMApi2Ev/assets/146729468/1277d063-b7d1-49ac-ba1f-d06a0fab36ae)
 
 --------------------------------------------------
 
@@ -117,9 +133,7 @@ los cuales manegarán la lógica según su nombre, se diseña el xml.
 ![image](https://github.com/mmruano/MoragriegaRuanoMApi2Ev/assets/146729468/c7095a34-43f0-46e0-b67c-85284210e218)
 ![image](https://github.com/mmruano/MoragriegaRuanoMApi2Ev/assets/146729468/7019d884-c9fa-43a4-9aa4-d80d6aea630c)
 
-Se empiza con el código del LoginActivty. Utilizaremos la librería de Retrofit, un cliente de servidores REST para Android
-y Java. Permite hacer peticiones al servidor tipo: GET, POST, PUT, PATCH, DELETE y HEAD, y gestionar diferentes tipos de parámetros,
-paseando automáticamente la respuesta a un tipo de datos.
+Se empiza con el código del LoginActivty.
 
 Cade vez que haya que hacer una petición al servidor se utilizará el mismo código, en este caso, la actividad de Login solo necesita
 los parámetros de username y password, que son los argumentos que necesita la endpoint de la API.
