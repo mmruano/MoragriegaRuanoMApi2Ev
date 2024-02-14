@@ -27,12 +27,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Fragmento que permite al usuario crear una nueva publicación.
+ */
 public class CreateFragment extends Fragment {
 
-    EditText createPostText;
-    ApiCRUD apiCRUD;
-    Button createPostButton;
+    private EditText createPostText;  // Campo de texto para la nueva publicación
+    private ApiCRUD apiCRUD;          // Instancia de la interfaz ApiCRUD para realizar operaciones en la API
+    private Button createPostButton;  // Botón para enviar la solicitud de creación de la publicación
 
+    /**
+     * Constructor por defecto de la clase `CreateFragment`.
+     */
     public CreateFragment() {
         // Required empty public constructor
     }
@@ -44,6 +50,14 @@ public class CreateFragment extends Fragment {
         }
     }
 
+    /**
+     * Crea y devuelve la vista asociada al fragmento.
+     *
+     * @param inflater           Inflador que infla la vista.
+     * @param container          Contenedor de la vista.
+     * @param savedInstanceState Estado previamente guardado de la instancia.
+     * @return Vista asociada al fragmento.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_create, container, false);
@@ -58,6 +72,11 @@ public class CreateFragment extends Fragment {
         return rootView;
     }
 
+    /**
+     * Método que se ejecuta cuando el usuario hace clic en el botón para crear una nueva publicación.
+     *
+     * @param view Vista asociada al botón.
+     */
     public void createPost(View view) {
 
         String text = createPostText.getText().toString();

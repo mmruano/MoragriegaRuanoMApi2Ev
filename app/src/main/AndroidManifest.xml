@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    AndroidManifest.xml: Este archivo describe las características y configuraciones de la aplicación Android.
+    Define permisos, actividades, servicios, y otras configuraciones esenciales para el sistema Android.
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permiso para acceder a Internet, necesario para realizar solicitudes a través de la red. -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Configuración de la aplicación. -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,6 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoragriegaRuanoMApi2Ev"
         tools:targetApi="31">
+
+        <!-- Actividad de inicio de sesión. -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -24,10 +33,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Actividad de navegación. -->
         <activity
             android:name=".NavigationActivity"
             android:exported="true" />
 
+        <!-- Configuración de fuentes pre-cargadas. -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

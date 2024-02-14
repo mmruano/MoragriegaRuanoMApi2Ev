@@ -27,12 +27,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Fragmento que muestra las publicaciones del usuario en la interfaz de inicio.
+ */
 public class HomeFragment extends Fragment {
 
-    List<PostDTO> postDTOList;
-    ApiCRUD apiCRUD;
-    ListView postListView;
+    private List<PostDTO> postDTOList;    // Lista de publicaciones del usuario
+    private ApiCRUD apiCRUD;               // Instancia de la interfaz ApiCRUD para realizar operaciones en la API
+    private ListView postListView;         // Vista de lista para mostrar las publicaciones
 
+    /**
+     * Constructor por defecto de la clase `HomeFragment`.
+     */
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -42,6 +48,14 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Crea y devuelve la vista asociada al fragmento.
+     *
+     * @param inflater           Inflador que infla la vista.
+     * @param container          Contenedor de la vista.
+     * @param savedInstanceState Estado previamente guardado de la instancia.
+     * @return Vista asociada al fragmento.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
@@ -50,6 +64,9 @@ public class HomeFragment extends Fragment {
         return rootView;
     }
 
+    /**
+     * Obtiene todas las publicaciones del usuario desde el servidor.
+     */
     private void getAll() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)

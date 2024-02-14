@@ -9,35 +9,30 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * Actividad principal que gestiona la navegación entre fragmentos mediante BottomNavigationView.
+ */
 public class NavigationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
-        /**
-         * Configuración del BottomNavigationView
-         */
+        // Configuración del BottomNavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigator_view);
         bottomNavigationView.setSelectedItemId(R.id.homeFragment);
         bottomNavigationView.setSelectedItemId(R.id.navigation_create);
         bottomNavigationView.setSelectedItemId(R.id.navigation_edit);
         bottomNavigationView.setSelectedItemId(R.id.navigation_delete);
 
-        /**
-         * Obtener el NavController del NavHostFragment
-         */
+        // Obtener el NavController del NavHostFragment
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
 
-        /**
-         * Configuración del listener para el BottomNavigationView
-         */
+        // Configuración del listener para el BottomNavigationView
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            /**
-             * Navegar a los fragmentos correspondientes según el ítem seleccionado
-             */
+            // Navegar a los fragmentos correspondientes según el ítem seleccionado
             if (item.getItemId() == R.id.navigation_home) {
                 navController.navigate(R.id.homeFragment);
             } else if (item.getItemId() == R.id.navigation_create) {
@@ -47,9 +42,7 @@ public class NavigationActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.navigation_delete) {
                 navController.navigate(R.id.deleteFragment);
             } else if (item.getItemId() == R.id.navigation_exit) {
-                /**
-                 * Navegar a la pantalla de inicio de sesión cuando se selecciona la opción de salir
-                 */
+                // Navegar a la pantalla de inicio de sesión cuando se selecciona la opción de salir
                 Intent intent = new Intent(NavigationActivity.this, LoginActivity.class);
                 startActivity(intent);
             }

@@ -26,12 +26,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Fragmento que permite al usuario eliminar una publicación por su ID.
+ */
 public class DeleteFragment extends Fragment {
 
-    EditText postIdText;
-    ApiCRUD apiCRUD;
-    Button deletePostButton;
+    private EditText postIdText;       // Campo de texto para el ID de la publicación a eliminar
+    private ApiCRUD apiCRUD;           // Instancia de la interfaz ApiCRUD para realizar operaciones en la API
+    private Button deletePostButton;   // Botón para enviar la solicitud de eliminación de la publicación
 
+    /**
+     * Constructor por defecto de la clase `DeleteFragment`.
+     */
     public DeleteFragment() {
         // Required empty public constructor
     }
@@ -43,6 +49,14 @@ public class DeleteFragment extends Fragment {
         }
     }
 
+    /**
+     * Crea y devuelve la vista asociada al fragmento.
+     *
+     * @param inflater           Inflador que infla la vista.
+     * @param container          Contenedor de la vista.
+     * @param savedInstanceState Estado previamente guardado de la instancia.
+     * @return Vista asociada al fragmento.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_delete, container, false);
@@ -58,6 +72,11 @@ public class DeleteFragment extends Fragment {
         return rootView;
     }
 
+    /**
+     * Método que se ejecuta cuando el usuario hace clic en el botón para eliminar una publicación.
+     *
+     * @param view Vista asociada al botón.
+     */
     public void deletePost(View view) {
 
         Long postId = Long.valueOf(postIdText.getText().toString());
