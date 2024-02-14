@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.vedruna.moragriegaruanomapi2ev.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="com.vedruna.moragriegaruanomapi2ev.CreateFragment"
+        android:label="fragment_create"
+        tools:layout="@layout/fragment_create" />
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="com.vedruna.moragriegaruanomapi2ev.DeleteFragment"
+        android:label="fragment_delete"
+        tools:layout="@layout/fragment_delete" />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.vedruna.moragriegaruanomapi2ev.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" />
+    <fragment
+        android:id="@+id/exitFragment"
+        android:name="com.vedruna.moragriegaruanomapi2ev.ExitFragment"
+        android:label="fragment_exit"
+        tools:layout="@layout/fragment_exit" />
+</navigation>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MoragriegaRuanoMApi2Ev</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home">Home</string>
+    <string name="fragment_create">Create</string>
+    <string name="fragment_edit">Edit</string>
+    <string name="fragment_delete">Delete</string>
+    <string name="fragment_exit">Exit</string>
+</resources>
